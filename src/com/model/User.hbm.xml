@@ -11,7 +11,7 @@
             <generator class="native"/>
         </id>
         <!--        普通属性-->
-        <property name="name" column="name" type="java.lang.String"/>
+        <property name="name" column="name" type="java.lang.String" length="20"/>
         <property name="age" column="age"/>
         <property name="remark" column="remark" type="java.lang.String"/>
 
