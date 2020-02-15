@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.model.Order" table="orders">
+        <id name="oid" column="oid">
+            <generator class="native" />
+        </id>
+        <property name="addr" column="addr" type="java.lang.String" length="20"/>
+<!--        name：对象中的属性，column：表中的字段名，class：一的一方的全路径-->
+        <many-to-one name="customer" column="con" class="com.model.Customer" cascade="save-update" />
+    </class>
+</hibernate-mapping>

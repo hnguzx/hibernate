@@ -16,4 +16,8 @@ public class HibernateUtils {
     public static Session openSession(){
         return SESSIONFACTORY.openSession();
     }
+
+    public static void main(String[] args) {
+        openSession();
+    }
 }

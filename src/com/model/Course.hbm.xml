@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.model.Course" table="course">
+        <id name="cid" column="cid">
+            <generator class="native" />
+        </id>
+        <property name="name" column="name" type="java.lang.String" length="20" />
+        <set name="students" table="stu_course" inverse="true">
+            <key column="sno"></key>
+            <many-to-many class="com.model.Student" column="cno"></many-to-many>
+        </set>
+    </class>
+
+</hibernate-mapping>

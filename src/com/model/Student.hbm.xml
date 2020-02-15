@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.model.Student" table="student">
+        <id name="sid" column="sid">
+            <generator class="native" />
+        </id>
+        <property name="name" column="name" type="java.lang.String" length="20"/>
+<!--        name：当前类中的集合属性名，table：中间表名-->
+        <set name="courses" table="stu_course" cascade="save-update">
+<!--            column：当前表在中间表的外键-->
+            <key column="cno"></key>
+<!--            class：另一个类的全路径，另一个类在中间表的外键-->
+            <many-to-many class="com.model.Course" column="sno"></many-to-many>
+        </set>
+    </class>
+    
+</hibernate-mapping>
