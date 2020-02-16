@@ -7,6 +7,7 @@
         <id name="cid" column="cid">
             <generator class="native"></generator>
         </id>
+        <version name="version" />
         <property name="name" column="name" type="java.lang.String" length="20" />
 <!--        name：对象中的属性名，key-column：外键名，class：多的那方的全路径-->
         <set name="orders" cascade="save-update,delete,delete-orphan" inverse="true">

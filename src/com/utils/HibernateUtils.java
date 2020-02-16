@@ -17,6 +17,10 @@ public class HibernateUtils {
         return SESSIONFACTORY.openSession();
     }
 
+    public static Session getCurrentSession(){
+        return SESSIONFACTORY.getCurrentSession();
+    }
+
     public static void main(String[] args) {
         openSession();
     }

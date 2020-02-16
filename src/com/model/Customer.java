@@ -6,6 +6,16 @@ import java.util.Set;
 public class Customer {
     private Integer cid;
     private String name;
+    private Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     private Set<Order> orders = new HashSet<>();
 
     public Integer getCid() {

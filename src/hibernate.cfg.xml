@@ -23,7 +23,18 @@
         <!--    通过配置文件自动建表-->
 <!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
         <property name="hibernate.hbm2ddl.auto">update</property>
+<!--        事务的隔离级别:1,2,4,8-->
+        <property name="hibernate.connection.isolation">4</property>
+<!--        使用当前线程中的session-->
+        <property name="hibernate.current_session_context_class">thread</property>
 
+        <!--        开启二级缓存-->
+<!--        <property name="hibernate.cache.use_second_level_cache">true</property>-->
+        <!--        指定二级缓存框架-->
+<!--        <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>-->
+        <!--        开启查询缓存-->
+<!--        <property name="hibernate.cache.use_query_cache">true</property>-->
+        
         <!--        改为c3p0连接池-->
         <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider
         </property>
@@ -45,6 +56,12 @@
         <mapping resource="com/model/Order.hbm.xml"/>
         <mapping resource="com/model/Student.hbm.xml" />
         <mapping resource="com/model/Course.hbm.xml"/>
+
+        <!--        指定哪些类需要加入二级缓存-->
+<!--        <class-cache class="com.model.Customer" usage="read-write"/>-->
+<!--        <class-cache class="com.model.Order" usage="read-write"/>-->
+        <!--        集合缓存-->
+<!--        <collection-cache collection="com.model.Customer.orders" usage="read-write" />-->
 
     </session-factory>
 

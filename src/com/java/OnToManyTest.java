@@ -3,6 +3,7 @@ package com.java;
 import com.model.Customer;
 import com.model.Order;
 import com.utils.HibernateUtils;
+import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
